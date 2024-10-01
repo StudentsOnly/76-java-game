@@ -52,6 +52,10 @@ public class RockPaperScissors implements Game {
         """);
 
       String input = scanner.nextLine().trim().toLowerCase();
+      if (input.isEmpty()) {
+        System.out.println("Input can not be empty.");
+        continue;
+      }
       switch (input.charAt(0)) {
         case 'r' -> playerChoice = RPS.ROCK;
         case 'p' -> playerChoice = RPS.PAPER;
