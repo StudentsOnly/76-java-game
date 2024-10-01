@@ -67,8 +67,9 @@ public class RockPaperScissors implements Game {
   }
 
   public Round decideRound(RPS player, RPS npc) {
+
     return player == npc ? Round.DRAW :
-      player.ordinal() + 1 == (npc.ordinal() + 2) % 3 ? Round.WON :
+      (player.ordinal() + 1) % 3 == (npc.ordinal() + 2) % 3 ? Round.WON :
         Round.LOSS;
   }
 
